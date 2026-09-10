@@ -104,6 +104,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const requestBtn = document.getElementById('request-consultation');
     const personalMessage = document.getElementById('personal-message');
     const charCounter = document.getElementById('char-counter');
+    const formStatus = document.getElementById('form-status');
+
+    function setFormStatus(message, type) {
+        if (!formStatus) return;
+        formStatus.textContent = message;
+        formStatus.className = 'form-status ' + (type || '');
+    }
 
     // Store selected services
     let selectedServices = [];
@@ -207,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // --- STEP 1: Validate Name (required) ---
             const hasName = clientName && clientName.value.trim().length > 0;
             if (!hasName) {
-                alert('Please enter your full name so we know who to contact.');
+                setFormStatus('Please enter your full name so we know who to contact.', 'error');
                 if (clientName) clientName.focus();
                 return;
             }
@@ -225,18 +232,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isValidEmail && !isValidPhone) {
                 // Check if email is provided but invalid
                 if (hasEmail && !isValidEmail) {
-                    alert('Please enter a valid email address, or just a phone number.');
+                    setFormStatus('Please enter a valid email address, or just a phone number.', 'error');
                     if (clientEmail) clientEmail.focus();
                     return;
                 }
                 // Check if phone is provided but invalid
                 if (hasPhone && !isValidPhone) {
-                    alert('Please enter a valid 10-digit phone number, or just an email address.');
+                    setFormStatus('Please enter a valid 10-digit phone number, or just an email address.', 'error');
                     if (clientPhone) clientPhone.focus();
                     return;
                 }
                 // If neither is provided at all
-                alert('Please provide a valid email address, a valid phone number, or both so we can contact you.');
+                setFormStatus('Please provide a valid email address, a valid phone number, or both so we can contact you.', 'error');
                 if (clientEmail) clientEmail.focus();
                 return;
             }
@@ -289,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const result = await response.json();
 
                 if (response.ok) {
-                    alert(result.message || 'Your consultation request has been sent.');
+                    setFormStatus(result.message || 'Your consultation request has been sent.', 'success');
 
                     // Clear form
                     selectedServices = [];
@@ -307,10 +314,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         btn.textContent = 'Add / Remove';
                     });
                 } else {
-                    alert('Error: ' + (result.error || 'Something went wrong. Please try again.'));
+                    setFormStatus('Error: ' + (result.error || 'Something went wrong. Please try again.'), 'error');
                 }
             } catch (error) {
-                alert('Network error. Please check your connection and try again.');
+                setFormStatus('Network error. Please check your connection and try again.', 'error');
             } finally {
                 this.disabled = false;
                 this.textContent = 'Request Consultation';

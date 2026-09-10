@@ -6,7 +6,7 @@ export async function onRequestPost({ request, env }) {
 
   try {
     const data = await request.json();
-    const { services, total, message } = data;
+    const { services, total, message, clientName, clientEmail, clientPhone, contactPref } = data;
 
     // Validate: must have services OR a message
     if (!services && !message) {
@@ -20,6 +20,19 @@ export async function onRequestPost({ request, env }) {
 
     // Build the email content
     let emailText = 'New Consultation Request\n\n';
+    if (clientName) {
+      emailText += 'Name: ' + clientName + '\n';
+    }
+    if (clientEmail) {
+      emailText += 'Email: ' + clientEmail + '\n';
+    }
+    if (clientPhone) {
+      emailText += 'Phone: ' + clientPhone + '\n';
+    }
+    if (contactPref) {
+      emailText += 'Preferred contact method: ' + contactPref + '\n';
+    }
+    emailText += '\n';
     if (services) {
       emailText += 'Services Selected:\n' + services + '\n\n';
     }

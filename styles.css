@@ -212,6 +212,38 @@ a:hover { color: var(--color-text); }
     opacity: 0.88;
 }
 
+.policy-note,
+.form-status {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.policy-note {
+    margin: 0 0 1rem;
+    opacity: 0.9;
+}
+
+.policy-note a,
+.form-status a,
+.legal-page a {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}
+
+.form-status {
+    min-height: 1.5em;
+    margin: 1rem 0 0;
+    font-weight: 600;
+}
+
+.form-status.error {
+    color: var(--color-error);
+}
+
+.form-status.success {
+    color: var(--color-text);
+}
+
 body.dark-mode .top-bar,
 body.dark-mode .theme-toggle,
 body.dark-mode .colorblind-toggle,
