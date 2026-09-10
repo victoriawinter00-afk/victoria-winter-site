@@ -281,6 +281,14 @@ body.dark-mode .reset-accessibility:focus-visible {
     color: #ffffff;
 }
 
+body.dark-mode .highlight-block,
+body.dark-mode .highlight-block .professional-title,
+body.dark-mode .highlight-block .tagline,
+body.dark-mode .highlight-block .invitation-question,
+body.dark-mode .highlight-block .subpage-title {
+    color: #111111;
+}
+
 body.dark-mode .site-banner {
     background: rgba(183, 167, 107, 0.18);
 }
