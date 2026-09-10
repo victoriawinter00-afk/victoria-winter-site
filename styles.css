@@ -258,6 +258,29 @@ body.dark-mode .contact-fields {
     color: var(--color-text);
 }
 
+body.dark-mode .top-bar {
+    background-color: #1d3b4b;
+    border-color: #5e9bb5;
+}
+
+body.dark-mode .theme-toggle,
+body.dark-mode .colorblind-toggle,
+body.dark-mode .reset-accessibility {
+    background-color: #315d70;
+    border-color: #9ed8eb;
+    color: #ffffff;
+}
+
+body.dark-mode .theme-toggle:hover,
+body.dark-mode .theme-toggle:focus-visible,
+body.dark-mode .colorblind-toggle:hover,
+body.dark-mode .colorblind-toggle:focus-visible,
+body.dark-mode .reset-accessibility:hover,
+body.dark-mode .reset-accessibility:focus-visible {
+    background-color: #477d92;
+    color: #ffffff;
+}
+
 body.dark-mode .site-banner {
     background: rgba(183, 167, 107, 0.18);
 }
