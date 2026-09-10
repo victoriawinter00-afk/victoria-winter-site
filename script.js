@@ -1,14 +1,29 @@
+// Apply the saved choices before wiring up page controls so every page shares the same state.
+(function applySavedAccessibilityState() {
+    const savedTheme = localStorage.getItem('theme-mode');
+    const savedColorblind = localStorage.getItem('colorblind-mode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersReducedLuminance = window.matchMedia('(prefers-contrast: more)').matches || window.matchMedia('(prefers-contrast: high)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && (prefersDark || prefersReducedLuminance))) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+
+    if (savedColorblind === 'on') {
+        document.body.classList.add('colorblind-mode');
+    } else {
+        document.body.classList.remove('colorblind-mode');
+    }
+})();
+
 // Wait for DOM to fully load
 document.addEventListener('DOMContentLoaded', function() {
 
     const themeToggle = document.querySelector('.theme-toggle');
     const colorblindToggle = document.querySelector('.colorblind-toggle');
     const resetButton = document.querySelector('.reset-accessibility');
-
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const reducedLuminance = window.matchMedia('(prefers-contrast: more)') || window.matchMedia('(prefers-contrast: high)');
-    const savedTheme = localStorage.getItem('theme-mode');
-    const savedColorblind = localStorage.getItem('colorblind-mode');
 
     const applyThemeState = function() {
         const isDark = document.body.classList.contains('dark-mode');
@@ -25,18 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
             colorblindToggle.setAttribute('aria-pressed', String(isColorblind));
         }
     };
-
-    if ((savedTheme && savedTheme === 'dark') || (!savedTheme && prefersDark)) {
-        document.body.classList.add('dark-mode');
-    }
-
-    if (savedColorblind === 'on') {
-        document.body.classList.add('colorblind-mode');
-    }
-
-    if (reducedLuminance && reducedLuminance.matches && !savedTheme) {
-        document.body.classList.add('dark-mode');
-    }
 
     applyThemeState();
     applyColorblindState();
