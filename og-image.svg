@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Victoria Winter - Administrative and Managerial Consultant</title>
+  <desc id="desc">Practical administrative support for founders, small businesses, and nonprofits.</desc>
+  <rect width="1200" height="630" fill="#d9f2fb"/>
+  <rect x="0" y="410" width="1200" height="220" fill="#f5a9b8"/>
+  <rect x="74" y="68" width="1052" height="494" rx="28" fill="#fffafb" stroke="#1d2d2a" stroke-width="4"/>
+  <rect x="74" y="68" width="1052" height="18" rx="9" fill="#5bc8e8"/>
+  <circle cx="150" cy="144" r="22" fill="#f5a9b8"/>
+  <circle cx="216" cy="144" r="22" fill="#ffffff" stroke="#1d2d2a" stroke-width="2"/>
+  <circle cx="282" cy="144" r="22" fill="#5bc8e8"/>
+  <text x="150" y="255" fill="#1d2d2a" font-family="Georgia, 'Times New Roman', serif" font-size="70" font-weight="700">Victoria Winter</text>
+  <text x="154" y="320" fill="#1d2d2a" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">Administrative and Managerial Consultant</text>
+  <line x1="154" y1="360" x2="1046" y2="360" stroke="#e58fa2" stroke-width="5"/>
+  <text x="154" y="421" fill="#1d2d2a" font-family="Arial, Helvetica, sans-serif" font-size="27">Practical support for forms, filings, and operations.</text>
+  <text x="154" y="466" fill="#1d2d2a" font-family="Arial, Helvetica, sans-serif" font-size="27">Clear, calm help for your next business step.</text>
+  <text x="154" y="526" fill="#1d2d2a" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">victoriawinter00.com</text>
+</svg>
