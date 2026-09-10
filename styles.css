@@ -18,17 +18,17 @@ input, textarea, select { font: inherit; }
    VARIABLES
 ------------------------------- */
 :root {
-    --color-primary: #eaf1f4;
-    --color-accent: #f3dfe9;
-    --color-accent-dark: #e6c9d8;
+    --color-primary: #d9f2fb;
+    --color-accent: #f5a9b8;
+    --color-accent-dark: #e58fa2;
     --color-text: #1d2d2a;
-    --color-highlight: #f5e7b7;
+    --color-highlight: #ffffff;
     --color-border: #d7d1c9;
-    --color-background: #fffdfb;
-    --color-focus: #dfeff3;
+    --color-background: #fffafb;
+    --color-focus: #bde9f8;
     --color-error: #9d2f2f;
-    --surface-soft: rgba(255, 255, 255, 0.38);
-    --surface-strong: rgba(255, 255, 255, 0.7);
+    --surface-soft: rgba(255, 255, 255, 0.56);
+    --surface-strong: rgba(255, 255, 255, 0.84);
     --font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     --font-size-base: 16px;
     --font-size-small: 13px;
@@ -61,7 +61,7 @@ body {
     font-size: var(--font-size-base);
     line-height: 1.6;
     color: var(--color-text);
-    background: linear-gradient(180deg, #edf3f6 0%, #f6f1ec 100%);
+    background: linear-gradient(180deg, #d9f2fb 0%, #fffafb 48%, #f5a9b8 100%);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     transition: background-color var(--transition-medium), color var(--transition-medium);
@@ -69,24 +69,24 @@ body {
 
 body.dark-mode {
     --color-primary: #111827;
-    --color-accent: #b4cfdb;
-    --color-accent-dark: #93b4c5;
+    --color-accent: #f5a9b8;
+    --color-accent-dark: #e58fa2;
     --color-text: #edf3f7;
-    --color-highlight: #b7a76b;
+    --color-highlight: #ffffff;
     --color-border: #2a3847;
     --color-background: #1b2431;
-    --color-focus: #24354b;
+    --color-focus: #24506a;
     --color-error: #ffb0b0;
     --box-shadow-soft: 0 18px 32px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(180deg, #111827 0%, #1b2431 100%);
+    background: linear-gradient(180deg, #102b3a 0%, #1b2431 52%, #4f2638 100%);
 }
 
 body.colorblind-mode {
-    --color-primary: #eef3f8;
-    --color-accent: #dfe9f8;
-    --color-accent-dark: #c9d9f7;
+    --color-primary: #e9f2ff;
+    --color-accent: #d7e7ff;
+    --color-accent-dark: #b9d3f5;
     --color-text: #1a1a1a;
-    --color-highlight: #fce3a7;
+    --color-highlight: #ffffff;
     --color-border: #6d6d6d;
     --color-background: #fbfbfb;
     --color-focus: #dfe7ff;
@@ -98,7 +98,7 @@ body.dark-mode.colorblind-mode {
     --color-accent: #dfe9f8;
     --color-accent-dark: #c9d9f7;
     --color-text: #f2f7ff;
-    --color-highlight: #f3d58a;
+    --color-highlight: #ffffff;
     --color-border: #6d6d6d;
     --color-background: #1b2431;
     --color-focus: #2e4d73;
@@ -113,7 +113,6 @@ body {
     font-size: var(--font-size-base);
     line-height: 1.6;
     color: var(--color-text);
-    background: linear-gradient(180deg, #edf3f6 0%, #f6f1ec 100%);
     transition: background-color var(--transition-medium), color var(--transition-medium);
 }
 h1, h2, h3, h4, h5, h6 { font-weight: 700; color: var(--color-text); }
@@ -416,10 +415,10 @@ body:not(.subpage) .invitation-question {
     text-align: center;
     box-sizing: border-box;
     white-space: nowrap;
-    background-color: #e0c8e0;
+    background-color: var(--color-accent);
 }
 .btn-landing:hover {
-    background-color: #F2D9F2;
+    background-color: var(--color-primary);
 }
 
 body.subpage .btn-landing {
