@@ -12,12 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const applyThemeState = function() {
         const isDark = document.body.classList.contains('dark-mode');
-        if (themeToggle) themeToggle.textContent = 'Dark mode: ' + (isDark ? 'On' : 'Off');
+        if (themeToggle) {
+            themeToggle.textContent = 'Dark mode: ' + (isDark ? 'On' : 'Off');
+            themeToggle.setAttribute('aria-pressed', String(isDark));
+        }
     };
 
     const applyColorblindState = function() {
         const isColorblind = document.body.classList.contains('colorblind-mode');
-        if (colorblindToggle) colorblindToggle.textContent = 'Colorblind mode: ' + (isColorblind ? 'On' : 'Off');
+        if (colorblindToggle) {
+            colorblindToggle.textContent = 'Colorblind mode: ' + (isColorblind ? 'On' : 'Off');
+            colorblindToggle.setAttribute('aria-pressed', String(isColorblind));
+        }
     };
 
     if ((savedTheme && savedTheme === 'dark') || (!savedTheme && prefersDark)) {
@@ -65,13 +71,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ---------- SERVICE TOGGLE (Expand/Collapse) ----------
     const toggles = document.querySelectorAll('.service-toggle');
-    toggles.forEach(function(toggle) {
+    toggles.forEach(function(toggle, index) {
+        const description = toggle.nextElementSibling;
+        const descriptionId = 'service-description-' + (index + 1);
+        toggle.setAttribute('type', 'button');
         toggle.setAttribute('aria-expanded', 'false');
+        if (description && description.classList.contains('service-description')) {
+            description.id = descriptionId;
+            toggle.setAttribute('aria-controls', descriptionId);
+        }
 
         toggle.addEventListener('click', function() {
-            const description = this.nextElementSibling;
-            if (description && description.classList.contains('service-description')) {
-                const isOpen = description.classList.toggle('open');
+            const controlledDescription = this.nextElementSibling;
+            if (controlledDescription && controlledDescription.classList.contains('service-description')) {
+                const isOpen = controlledDescription.classList.toggle('open');
                 this.setAttribute('aria-expanded', String(isOpen));
             }
         });
@@ -79,6 +92,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ---------- DOM ELEMENT REFERENCES ----------
     const addRemoveBtns = document.querySelectorAll('.add-remove-btn');
+    document.querySelectorAll('button').forEach(function(button) {
+        button.setAttribute('type', button.getAttribute('type') || 'button');
+    });
+    addRemoveBtns.forEach(function(button) {
+        button.setAttribute('aria-label', 'Add or remove ' + button.getAttribute('data-service'));
+    });
     const selectedList = document.getElementById('selected-services-list');
     const totalEstimate = document.getElementById('total-estimate');
     const descriptionMessage = document.getElementById('description-message');

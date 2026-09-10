@@ -14,6 +14,15 @@ img { max-width: 100%; display: block; }
 button { background: none; border: none; cursor: pointer; font: inherit; color: inherit; }
 input, textarea, select { font: inherit; }
 
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--color-text);
+    outline-offset: 3px;
+}
+
 /* ------------------------------
    VARIABLES
 ------------------------------- */
@@ -189,6 +198,7 @@ a:hover { color: var(--color-text); }
     color: var(--color-text);
     border-radius: 999px;
     padding: 0.5rem 0.9rem;
+    min-height: 44px;
     font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
@@ -368,6 +378,7 @@ body:not(.subpage) .invitation-question {
     transition: background-color var(--transition-fast);
     text-align: center;
     width: auto;
+    min-height: 44px;
 }
 .btn-back:hover {
     background-color: var(--color-accent);
@@ -396,13 +407,14 @@ body:not(.subpage) .invitation-question {
     transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
     text-align: center;
     box-shadow: 0 10px 22px rgba(29, 45, 42, 0.05);
+    min-height: 44px;
 }
 .btn:hover {
     background-color: var(--color-primary);
     transform: translateY(-1px);
 }
 .btn:focus-visible {
-    outline: 3px solid rgba(29, 45, 42, 0.2);
+    outline: 3px solid var(--color-text);
     outline-offset: 3px;
 }
 .btn-landing {
@@ -437,6 +449,7 @@ body.subpage .btn-landing {
     font-size: var(--font-size-base);
     font-weight: 600;
     cursor: pointer;
+    min-height: 44px;
     transition: background-color var(--transition-fast);
 }
 .btn-consultation:hover {
@@ -580,6 +593,7 @@ body.subpage .btn-landing {
     cursor: pointer;
     transition: background-color var(--transition-fast), transform var(--transition-fast);
     color: var(--color-text);
+    min-height: 44px;
 }
 .service-toggle:hover,
 .service-toggle:focus-visible {
@@ -609,6 +623,7 @@ body.subpage .btn-landing {
     font-weight: 700;
     cursor: pointer;
     margin-top: 8px;
+    min-height: 44px;
     transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 .add-remove-btn:hover {
