@@ -301,6 +301,19 @@ body.dark-mode .add-remove-btn {
     color: var(--color-text);
 }
 
+body.dark-mode .btn-landing {
+    background-color: #f5a9b8;
+    color: #111111;
+    border-color: #ffd9e1;
+}
+
+body.dark-mode .btn-landing:hover,
+body.dark-mode .btn-landing:focus-visible {
+    background-color: #ffffff;
+    color: #111111;
+    border-color: #ffffff;
+}
+
 @media (max-width: 768px) {
     .top-bar {
         flex-direction: column;
