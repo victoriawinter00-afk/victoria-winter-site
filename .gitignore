@@ -4,3 +4,6 @@
 .env.*
 !.env.example
 node_modules/
+
+# Local-only agent configuration — kept off the public repo
+.kilo/agents/manager.md
