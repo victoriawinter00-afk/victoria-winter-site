@@ -1,0 +1,146 @@
+/* ------------------------------
+   COMPACT TOP BAR (responsive)
+------------------------------- */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .accessibility-controls {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* ------------------------------
+   LAYOUT
+------------------------------- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section,
+header,
+footer {
+    position: relative;
+}
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-column { display: flex; flex-direction: column; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.grid { display: grid; }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.mt-1 { margin-top: var(--spacing-md); }
+.mt-2 { margin-top: var(--spacing-lg); }
+.mb-1 { margin-bottom: var(--spacing-md); }
+.mb-2 { margin-bottom: var(--spacing-lg); }
+.p-1 { padding: var(--spacing-md); }
+.p-2 { padding: var(--spacing-lg); }
+
+/* ------------------------------
+   PAGES
+------------------------------- */
+body.subpage {
+    background-color: var(--color-primary);
+}
+body:not(.subpage) .container {
+    max-width: 900px;
+}
+body.subpage .business-name {
+    font-size: 18px;
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+body.subpage .professional-title {
+    font-size: 16px;
+}
+body.subpage .tagline {
+    font-size: 16px;
+}
+body.subpage .invitation-question {
+    font-size: 18px;
+}
+
+/* ------------------------------
+   RESPONSIVE
+------------------------------- */
+@media (max-width: 768px) {
+    body:not(.subpage) .business-name { font-size: 28px; }
+    body:not(.subpage) .professional-title { font-size: 24px; }
+    body:not(.subpage) .tagline { font-size: 22px; }
+    body:not(.subpage) .invitation-question { font-size: 24px; }
+    body:not(.subpage) .btn-landing {
+        font-size: 22px;
+        padding: 16px 20px;
+        max-width: 100%;
+        width: 100%;
+        white-space: normal;
+    }
+    body:not(.subpage) header {
+        min-height: 60vh;
+        padding: 2rem 0;
+    }
+    .business-name { font-size: 16px; }
+    .professional-title { font-size: 14px; }
+    .tagline { font-size: 14px; }
+    .invitation-question { font-size: 16px; }
+    .btn-landing {
+        font-size: 14px;
+        padding: 12px 20px;
+        max-width: 100%;
+        white-space: normal;
+    }
+    .disclaimer-footer p { font-size: 11px; }
+    .service-toggle { font-size: 1rem; padding: 0.9rem 1rem; }
+    .service-description { font-size: 1rem; padding: 1rem; }
+    .add-remove-btn { font-size: 0.875rem; padding: 0.5rem 0.75rem; }
+    .checkbox-group { gap: 1rem; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    body:not(.subpage) .business-name { font-size: 22px; }
+    body:not(.subpage) .professional-title { font-size: 18px; }
+    body:not(.subpage) .tagline { font-size: 16px; }
+    body:not(.subpage) .btn-landing { font-size: 18px; padding: 14px 16px; }
+    .container { padding: 0 12px; }
+}
+
+/* ------------------------------
+   DISCLAIMER FOOTER
+------------------------------- */
+.disclaimer-footer {
+    background-color: var(--color-focus);
+    color: var(--color-text);
+    padding: 2rem 0;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 3rem;
+}
+.disclaimer-footer .container {
+    max-width: 900px;
+}
+.disclaimer-footer p {
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+}
+.disclaimer-footer strong {
+    color: #051d00;
+}
+.legal-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0 0.75rem;
+    font-weight: 600;
+}
+.legal-links a {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+}

@@ -7,13 +7,17 @@
     <meta name="description" content="Legal disclaimer for Victoria Winter consulting services and website information.">
     <meta name="author" content="Victoria Winter">
     <link rel="canonical" href="https://www.victoriawinter00.com/legal-disclaimer.html">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Layered stylesheets: variables → base → components → layout -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
 </head>
 <body class="subpage">
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="site-banner" role="status" aria-live="polite">
+    <aside class="site-banner" role="status" aria-live="polite">
         We do not use cookies, tracking scripts, or personalized advertising on this site.
-    </div>
+    </aside>
 
     <main id="main-content">
         <header>
@@ -31,9 +35,9 @@
                     <p class="professional-title">Administrative and Managerial Consultant</p>
                     <p class="subpage-title">Legal Disclaimer</p>
                 </div>
-                <div style="text-align: left; width: 100%;">
+                <nav class="back-link-wrap">
                     <a href="index.html" class="btn-back">← Back to Home</a>
-                </div>
+                </nav>
             </div>
         </header>
 
@@ -65,19 +69,21 @@
             </div>
         </section>
 
-        <footer class="disclaimer-footer">
-            <div class="container">
-                <div class="legal-links" aria-label="Legal links">
-                    <a href="index.html">Home</a>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                    <a href="https://www.linkedin.com/in/vlwbusiness" rel="me noopener" target="_blank">LinkedIn</a>
-                </div>
-                <p>&copy; 2026 Victoria Winter. All rights reserved.</p>
-            </div>
-        </footer>
+        
     </main>
 
-    <script src="script.js"></script>
+    <footer class="disclaimer-footer">
+        <div class="container">
+            <nav class="legal-links" aria-label="Legal links">
+                <a href="index.html">Home</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="https://www.linkedin.com/in/vlwbusiness" rel="me noopener" target="_blank">LinkedIn</a>
+            </nav>
+            <p>&copy; 2026 Victoria Winter. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

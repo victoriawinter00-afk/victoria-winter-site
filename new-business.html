@@ -32,14 +32,17 @@
         }
         </script>
 
-    <!-- Single CSS file — all styles merged -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Layered stylesheets: variables → base → components → layout -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
 </head>
 <body class="subpage">
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="site-banner" role="status" aria-live="polite">
+    <aside class="site-banner" role="status" aria-live="polite">
         We do not use cookies, tracking scripts, or personalized advertising on this site.
-    </div>
+    </aside>
 
     <main id="main-content">
         <header>
@@ -57,9 +60,9 @@
                     <p class="professional-title">Administrative and Managerial Consultant</p>
                     <p class="subpage-title">New Business Services</p>
                 </div>
-                <div class="back-link-wrap">
+                <nav class="back-link-wrap">
                     <a href="index.html" class="btn-back">← Back to Home</a>
-                </div>
+                </nav>
             </div>
         </header>
 
@@ -72,9 +75,9 @@
             <!-- ======================================== -->
             <!-- LLC FORMATION SERVICES (Unbundled)       -->
             <!-- ======================================== -->
-            <div class="category-header">LLC Formation Services</div>
+            <h3 class="category-header">LLC Formation Services</h3>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="name-selection">Name Selection — $50 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Securing registration of the business name.</p>
@@ -82,9 +85,9 @@
                     <p><strong>Pricing includes:</strong> Name research of up to 3 name choices (in case the one you wanted was taken) for one business registration, preparation of the registration form for signing, and submission of the form. Hourly rate of $100 per hour, minimum 1-hour charge, applies if we have to search beyond 3 name options.</p>
                     <button class="add-remove-btn" data-service="Name Selection — $50" data-price="50">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="articles-organization">Articles of Organization Filing — $75 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Preparation and filing of the foundational legal document establishing your LLC with the state.</p>
@@ -92,9 +95,9 @@
                     <p><strong>Pricing includes:</strong> Preparation of the Articles of Organization, client review, and submission to the state.</p>
                     <button class="add-remove-btn" data-service="Articles of Organization Filing — $75" data-price="75">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="ein-acquisition">EIN Acquisition — $50 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Guided assistance with the IRS EIN application process.</p>
@@ -102,9 +105,9 @@
                     <p><strong>Pricing includes:</strong> Walkthrough of the IRS application, verification of accuracy, and submission. If the IRS requires additional information, I assist with that as well, at no extra cost for this service.</p>
                     <button class="add-remove-btn" data-service="EIN Acquisition — $50" data-price="50">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="registered-agent">Registered Agent Selection — $20 flat rate / $50/hour</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Selection and registration of the Registered Agent for the business.</p>
@@ -112,9 +115,9 @@
                     <p><strong>Pricing includes:</strong> Hourly rate for pulling and vetting sources for registered agents and filing the selected service. If you provide me the name of the Agent or Service directly I will only charge $20 to file registration with them and the state for you.</p>
                     <button class="add-remove-btn" data-service="Registered Agent Selection — $20/$50" data-price="20">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="operating-agreement">Operating Agreement Drafting — $100 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Drafting of the internal governance document defining ownership, profit/loss sharing, and management structure of the LLC.</p>
@@ -122,9 +125,9 @@
                     <p><strong>Pricing includes:</strong> Initial draft, one round of revisions, and final version. Additional revisions billed at $100/hour. To save time and money, please ensure all owners are in alignment with this agreement during the primary revision round.</p>
                     <button class="add-remove-btn" data-service="Operating Agreement Drafting — $100" data-price="100">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="llc-comprehensive">Comprehensive LLC Formation Package — 20% off total flat rates</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> All LLC formation services bundled.</p>
@@ -133,14 +136,14 @@
                     <p><strong>Build & Launch Continuity Credit:</strong> You are eligible for a 10% discount on any Comprehensive Website Development Tier when booked within 45 days of formation completion. See Item 34 for full details.</p>
                     <button class="add-remove-btn" data-service="LLC Comprehensive Package — 20% off" data-price="236">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
             <!-- ======================================== -->
             <!-- SOLE PROPRIETORSHIP SETUP                -->
             <!-- ======================================== -->
-            <div class="category-header">Sole Proprietorship Setup</div>
+            <h3 class="category-header">Sole Proprietorship Setup</h3>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="dba-registration">Trade Name Registration (DBA) — $50 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Registration of a trade name (Doing Business As) for a sole proprietorship with the appropriate state and local authorities.</p>
@@ -148,9 +151,9 @@
                     <p><strong>Pricing includes:</strong> Name research of up to 3 name choices (in case the one you wanted was taken) for one business registration, preparation of the registration form for signing, and submission of the form. Hourly rate of $100 per hour, minimum 1-hour charge, applies if we have to search beyond 3 name options.</p>
                     <button class="add-remove-btn" data-service="Trade Name Registration (DBA) — $50" data-price="50">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="city-license">City License Research — $75 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Research and documentation of all required city-level licenses, permits, and registrations for your specific business type and location.</p>
@@ -158,9 +161,9 @@
                     <p><strong>Pricing includes:</strong> Research of city licenses, permits, and registrations. Clear checklist with locations and instructions.</p>
                     <button class="add-remove-btn" data-service="City License Research — $75" data-price="75">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="sole-prop-ein">EIN Acquisition — $50 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Guided assistance with the IRS EIN application process.</p>
@@ -168,9 +171,9 @@
                     <p><strong>Pricing includes:</strong> Walkthrough of the IRS application, verification of accuracy, and submission.</p>
                     <button class="add-remove-btn" data-service="EIN Acquisition — $50" data-price="50">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="state-local-license">State & Local License Research — $125 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Comprehensive research and documentation of all required licenses, permits, and registrations at the state, county, and municipal levels for your specific business type and location.</p>
@@ -179,9 +182,9 @@
                     <p><strong>Disclaimer:</strong> Some filings require fees at the time of submission, and recurring fees may apply. You are responsible for providing payment directly to the relevant entity and for the costs associated with operating your business.</p>
                     <button class="add-remove-btn" data-service="State & Local License Research — $125" data-price="125">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="foundational-compliance">Foundational Compliance Documentation — $75 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Preparation of foundational compliance documents for your sole proprietorship, including operational procedures and record-keeping requirements.</p>
@@ -189,9 +192,9 @@
                     <p><strong>Pricing includes:</strong> Preparation of foundational compliance documents, operational procedures, and record-keeping guidance.</p>
                     <button class="add-remove-btn" data-service="Foundational Compliance Documentation — $75" data-price="75">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="sole-prop-comprehensive">Comprehensive Sole Proprietorship Package — 20% off total flat rates</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> All sole proprietorship setup services bundled.</p>
@@ -200,14 +203,14 @@
                     <p><strong>Build & Launch Continuity Credit:</strong> You are eligible for a 10% discount on any Comprehensive Website Development Tier when booked within 45 days of formation completion. See Item 34 for full details.</p>
                     <button class="add-remove-btn" data-service="Sole Prop Comprehensive Package — 20% off" data-price="300">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
             <!-- ======================================== -->
             <!-- NONPROFIT FORMATION                      -->
             <!-- ======================================== -->
-            <div class="category-header">Nonprofit Formation</div>
+            <h3 class="category-header">Nonprofit Formation</h3>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="nonprofit-name">Name Selection — $50 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Securing registration of the business name.</p>
@@ -215,9 +218,9 @@
                     <p><strong>Pricing includes:</strong> Name research of up to 3 name choices, preparation of the registration form for signing, and submission of the form. Hourly rate of $100 per hour, minimum 1-hour charge, applies if we have to search beyond 3 name options.</p>
                     <button class="add-remove-btn" data-service="Name Selection — $50" data-price="50">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="articles-incorporation">Articles of Incorporation — $125 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Preparation and filing of the foundational legal document establishing your nonprofit organization with the state.</p>
@@ -225,9 +228,9 @@
                     <p><strong>Pricing includes:</strong> Preparation of the Articles of Incorporation, client review, and submission to the state.</p>
                     <button class="add-remove-btn" data-service="Articles of Incorporation — $125" data-price="125">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="board-structure">Board Structure Development — $100 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Guidance on establishing your board of directors, including identification of required roles, responsibilities, and governance structure.</p>
@@ -235,9 +238,9 @@
                     <p><strong>Pricing includes:</strong> Board structure guidance, role definitions, and governance documentation.</p>
                     <button class="add-remove-btn" data-service="Board Structure Development — $100" data-price="100">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="bylaws-drafting">Bylaws Drafting — $150 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Drafting of the internal governance document defining the rules and procedures for your nonprofit's board and operations.</p>
@@ -245,9 +248,9 @@
                     <p><strong>Pricing includes:</strong> Initial draft, one round of revisions, and final version. Additional revisions billed at $100/hour.</p>
                     <button class="add-remove-btn" data-service="Bylaws Drafting — $150" data-price="150">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="form-1023ez">IRS Form 1023-EZ Application — $250 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Preparation and submission of the IRS Form 1023-EZ application for 501(c)(3) federal tax-exempt status.</p>
@@ -255,9 +258,9 @@
                     <p><strong>Pricing includes:</strong> Form preparation, review, and submission. If the IRS requires additional information, I assist with that as well.</p>
                     <button class="add-remove-btn" data-service="IRS Form 1023-EZ Application — $250" data-price="250">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="nonprofit-state-reg">State Registration — $125 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Registration of your nonprofit with the appropriate state authorities to operate legally and solicit donations.</p>
@@ -265,9 +268,9 @@
                     <p><strong>Pricing includes:</strong> State registration form preparation and submission.</p>
                     <button class="add-remove-btn" data-service="State Registration — $125" data-price="125">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="nonprofit-comprehensive">Comprehensive Nonprofit Formation Package — 20% off total flat rates</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> All nonprofit formation services bundled.</p>
@@ -276,13 +279,13 @@
                     <p><strong>Build & Launch Continuity Credit:</strong> You are eligible for a 10% discount on any Comprehensive Website Development Tier when booked within 45 days of formation completion. See Item 34 for full details.</p>
                     <button class="add-remove-btn" data-service="Nonprofit Comprehensive Package — 20% off" data-price="600">Add / Remove</button>
                 </div>
-            </div>
+            </article>
             <!-- ======================================== -->
             <!-- WEBSITE DEVELOPMENT SERVICES             -->
             <!-- ======================================== -->
-            <div class="category-header">Website Development Services</div>
+            <h3 class="category-header">Website Development Services</h3>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="visual-identity">Visual Identity & CSS Styling — $300 flat rate (up to 8 hours)</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Customization of your website's visual appearance to align with your brand identity, including color schemes, typography, layout adjustments, and responsive design refinements. For existing websites that need a visual refresh.</p>
@@ -291,9 +294,9 @@
                     <p><strong>Additional time:</strong> Work exceeding the 8-hour cap is billed at $100/hour, with a minimum 1-hour charge.</p>
                     <button class="add-remove-btn" data-service="Visual Identity & CSS Styling — $300" data-price="300">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="ux-layout">Front-End User Experience & Layout — $500 flat rate (up to 10 pages, up to 2 forms, up to 12 hours)</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Design and implementation of intuitive navigation structures, interactive elements, front-end form handling, and responsive layouts optimized for user engagement.</p>
@@ -302,9 +305,9 @@
                     <p><strong>Additional time:</strong> Work exceeding the 12-hour cap is billed at $100/hour, with a minimum 1-hour charge.</p>
                     <button class="add-remove-btn" data-service="UX & Layout — $500" data-price="500">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="website-starter">Website Development (Starter) — $1,500 flat rate (up to 5 pages, up to 20 hours)</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Professional 3-5 page website using a clean template with responsive design, contact form, foundational SEO, and 30 days of post-launch support.</p>
@@ -313,9 +316,9 @@
                     <p><strong>Additional time:</strong> Work exceeding the 20-hour cap is billed at $100/hour, with a minimum 1-hour charge.</p>
                     <button class="add-remove-btn" data-service="Website Starter — $1,500" data-price="1500">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="website-professional">Website Development (Professional) — $3,500 flat rate (up to 10 pages, up to 40 hours)</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Custom 5-10 page website with unique design, blog/news section, advanced SEO, content migration, and 60 days of post-launch support. Built to grow with your business.</p>
@@ -324,9 +327,9 @@
                     <p><strong>Additional time:</strong> Work exceeding the 40-hour cap is billed at $100/hour, with a minimum 1-hour charge.</p>
                     <button class="add-remove-btn" data-service="Website Professional — $3,500" data-price="3500">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="domain-setup">Custom Domain & SSL Setup — $25 flat rate</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Full configuration of custom domain registration, DNS management, SSL provisioning, and secure site activation at the client's chosen domain address. If you already have a domain, I'll configure it instead of registering a new one.</p>
@@ -335,14 +338,14 @@
                     <p><strong>Note:</strong> Domain registration and external SSL provider fees are separate, paid directly to the respective vendors, and remain the sole financial responsibility of the client.</p>
                     <button class="add-remove-btn" data-service="Domain & SSL Setup — $25" data-price="25">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
             <!-- ======================================== -->
             <!-- WEBSITE MAINTENANCE PLANS                 -->
             <!-- ======================================== -->
-            <div class="category-header">Website Maintenance Plans</div>
+            <h3 class="category-header">Website Maintenance Plans</h3>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="maintenance-basic">Maintenance Plan (Basic) — $75/month</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Ongoing website maintenance including security monitoring, core and plugin updates, automated daily backups, and basic uptime monitoring to ensure site stability and security.</p>
@@ -350,9 +353,9 @@
                     <p><strong>Pricing includes:</strong> Security monitoring, software updates, daily backups, basic uptime monitoring. Billed monthly in advance.</p>
                     <button class="add-remove-btn" data-service="Maintenance Basic — $75/mo" data-price="75">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="maintenance-standard">Maintenance Plan (Standard) — $125/month</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> All Basic plan features plus two content updates per month and performance monitoring. Ensures site freshness, speed, and ongoing optimization.</p>
@@ -360,9 +363,9 @@
                     <p><strong>Pricing includes:</strong> Basic features, 2 content updates/month, performance monitoring (speed testing and optimization recommendations). Billed monthly in advance.</p>
                     <button class="add-remove-btn" data-service="Maintenance Standard — $125/mo" data-price="125">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="maintenance-premium">Maintenance Plan (Premium) — $150/month</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> All Standard plan features plus priority support and monthly SEO review. Provides comprehensive coverage for businesses that rely heavily on their website for revenue and operations.</p>
@@ -370,14 +373,14 @@
                     <p><strong>Pricing includes:</strong> Standard features, priority support, monthly SEO review. Billed monthly in advance.</p>
                     <button class="add-remove-btn" data-service="Maintenance Premium — $150/mo" data-price="150">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
             <!-- ======================================== -->
             <!-- CONTENT WRITING                          -->
             <!-- ======================================== -->
-            <div class="category-header">Content Writing</div>
+            <h3 class="category-header">Content Writing</h3>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="content-writing">Content Writing — $60/page (up to 500 words per page)</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> Professional, SEO-informed content creation tailored to your industry and audience, including keyword research, engaging copywriting, and strategic positioning for your website pages. I write service pages, landing pages, blog posts, and other website content.</p>
@@ -386,13 +389,13 @@
                     <p><strong>Additional revisions:</strong> Additional pages or content beyond the word limit are billed at $100/hour. Additional revisions beyond the included round are billed at $100/hour.</p>
                     <button class="add-remove-btn" data-service="Content Writing — $60/page" data-price="60">Add / Remove</button>
                 </div>
-            </div>
+            </article>
             <!-- ======================================== -->
             <!-- BUILD & LAUNCH CONTINUITY CREDIT        -->
             <!-- ======================================== -->
-            <div class="category-header">Build &amp; Launch Continuity Credit</div>
+            <h3 class="category-header">Build &amp; Launch Continuity Credit</h3>
 
-            <div class="service-item">
+            <article class="service-item">
                 <button class="service-toggle" data-service="continuity-credit-existing">Build & Launch Continuity Credit — 10% discount</button>
                 <div class="service-description">
                     <p><strong>Service Description:</strong> A continuity discount applied to any Comprehensive Website Development Tier when purchased within 45 days of completing a comprehensive business formation package.</p>
@@ -403,19 +406,19 @@
                     <p><strong>Limitations:</strong> This discount applies to one Comprehensive Website Development Tier per formation client. It cannot be combined with other discounts or promotional offers.</p>
                     <button class="add-remove-btn" data-service="Continuity Credit — 10% off" data-price="0">Add / Remove</button>
                 </div>
-            </div>
+            </article>
 
             <!-- ======================================== -->
             <!-- QUOTE BOXES                              -->
             <!-- ======================================== -->
 
-            <div class="quote-box">
+            <blockquote class="quote-box">
                 <p>"The reason I use this pricing structure is: If I needed this help or these services, I would be looking for someone who wants to really help people build things, and that means helping founders save funds for other upcoming costs and overhead while providing the same quality of service and accuracy as the expensive choices. My success is Your success."</p>
-            </div>
+            </blockquote>
 
-            <div class="quote-box quote-box-highlight">
+            <blockquote class="quote-box quote-box-highlight">
                 <p>"I build custom websites for all businesses and startups. I'm not an agency, I'm a solo developer who charges 30–40% less than the market average because I don't have agency overhead. I deliver professional web design with full founder transparency and no hidden fees. You can have as much or as little access to the code infrastructure as you need to."</p>
-            </div>
+            </blockquote>
 
             <!-- ======================================== -->
             <!-- CONSULTATION BUILDER                     -->
@@ -463,7 +466,9 @@
         </div>
     </section>
 
-    <footer class="disclaimer-footer">
+        </main>
+
+<footer class="disclaimer-footer">
         <div class="container">
             <p><strong>Trust & Security</strong></p>
             <p>I do not retain any client's data or their company data except as required by applicable law for the required timeframes as specified by applicable law. Records are retained only for the period required by Colorado and federal law for record-keeping purposes, and are securely destroyed after the retention period expires.</p>
@@ -476,17 +481,17 @@
             <p>Results will vary. Past performance or success stories do not guarantee future results.</p>
             <p>I do not accept unsolicited commercial solicitations. If you are contacting me to sell me services or products, please do not use this contact form.</p>
             <p><strong>Business Registration:</strong> Victoria Winter is a licensed and registered business in the State of Colorado. All services are provided in compliance with applicable state and local regulations. Proof of registration available upon request.</p>
-            <div class="legal-links" aria-label="Legal links">
+            <nav class="legal-links" aria-label="Legal links">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="legal-disclaimer.html">Legal Disclaimer</a>
                 <a href="terms-of-service.html">Terms of Service</a>
                 <a href="https://www.linkedin.com/in/vlwbusiness" rel="me noopener" target="_blank">LinkedIn</a>
                 <a href="index.html">Home</a>
-            </div>
+            </nav>
             <p>&copy; 2026 Victoria Winter. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

@@ -46,14 +46,17 @@
         }
         </script>
 
-    <!-- Single CSS file — all styles merged -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Layered stylesheets: variables → base → components → layout -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="site-banner" role="status" aria-live="polite">
+    <aside class="site-banner" role="status" aria-live="polite">
         We do not use cookies, tracking scripts, or personalized advertising on this site.
-    </div>
+    </aside>
 
     <main id="main-content">
         <header>
@@ -78,34 +81,34 @@
                 <p class="site-note">This site intentionally avoids cookies, tracking scripts, and personalized advertising. It is designed to be clear, low-distraction, and respectful of your attention.</p>
             </div>
         </header>
-
-        <footer class="disclaimer-footer">
-            <div class="container">
-                <p><strong>Trust & Security</strong></p>
-                <p>I do not retain any client's data or their company data except as required by applicable law for the required timeframes as specified by applicable law. Records are retained only for the period required by Colorado and federal law for record-keeping purposes, and are securely destroyed after the retention period expires.</p>
-                <p><strong>Payment Notice:</strong> I value offering the highest quality service, design, and most comprehensive packages for the lowest price I can sustain. If you need help with payments or payment plans, I am open to formal discussions.</p>
-                <p><strong>Legal Disclaimers</strong></p>
-                <p>I am not an attorney. I do not provide legal advice. Nothing on this website constitutes legal advice.</p>
-                <p>I am not a CPA, tax advisor, or financial advisor. I do not provide accounting, tax, or financial advice.</p>
-                <p>All guidance provided is for informational and educational purposes only. You are responsible for your own compliance and should consult with appropriate licensed professionals.</p>
-                <p>No attorney-client relationship is formed by using this website or engaging my services.</p>
-                <p>Service availability, pricing, and timelines may vary. All services are subject to availability.</p>
-                <p>Results will vary. Past performance or success stories do not guarantee future results.</p>
-                <p>The information provided on this website is updated manually and periodically and may not reflect the most current legal or regulatory developments.</p>
-                <p>I do not accept unsolicited commercial solicitations. If you are contacting me to sell me services or products, please do not use this contact form.</p>
-                <p><strong>Business Registration:</strong> Victoria Winter is a licensed and registered business in the State of Colorado. All services are provided in compliance with applicable state and local regulations. Proof of registration available upon request.</p>
-                <div class="legal-links" aria-label="Legal links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="legal-disclaimer.html">Legal Disclaimer</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                    <a href="https://www.linkedin.com/in/vlwbusiness" rel="me noopener" target="_blank">LinkedIn</a>
-                    <a href="index.html">Home</a>
-                </div>
-                <p>&copy; 2026 Victoria Winter. All rights reserved.</p>
-            </div>
-        </footer>
     </main>
 
-    <script src="script.js"></script>
+    <footer class="disclaimer-footer">
+        <div class="container">
+            <p><strong>Trust & Security</strong></p>
+            <p>I do not retain any client's data or their company data except as required by applicable law for the required timeframes as specified by applicable law. Records are retained only for the period required by Colorado and federal law for record-keeping purposes, and are securely destroyed after the retention period expires.</p>
+            <p><strong>Payment Notice:</strong> I value offering the highest quality service, design, and most comprehensive packages for the lowest price I can sustain. If you need help with payments or payment plans, I am open to formal discussions.</p>
+            <p><strong>Legal Disclaimers</strong></p>
+            <p>I am not an attorney. I do not provide legal advice. Nothing on this website constitutes legal advice.</p>
+            <p>I am not a CPA, tax advisor, or financial advisor. I do not provide accounting, tax, or financial advice.</p>
+            <p>All guidance provided is for informational and educational purposes only. You are responsible for your own compliance and should consult with appropriate licensed professionals.</p>
+            <p>No attorney-client relationship is formed by using this website or engaging my services.</p>
+            <p>Service availability, pricing, and timelines may vary. All services are subject to availability.</p>
+            <p>Results will vary. Past performance or success stories do not guarantee future results.</p>
+            <p>The information provided on this website is updated manually and periodically and may not reflect the most current legal or regulatory developments.</p>
+            <p>I do not accept unsolicited commercial solicitations. If you are contacting me to sell me services or products, please do not use this contact form.</p>
+            <p><strong>Business Registration:</strong> Victoria Winter is a licensed and registered business in the State of Colorado. All services are provided in compliance with applicable state and local regulations. Proof of registration available upon request.</p>
+            <nav class="legal-links" aria-label="Legal links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="legal-disclaimer.html">Legal Disclaimer</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="https://www.linkedin.com/in/vlwbusiness" rel="me noopener" target="_blank">LinkedIn</a>
+                <a href="index.html">Home</a>
+            </nav>
+            <p>&copy; 2026 Victoria Winter. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

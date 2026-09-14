@@ -1,0 +1,73 @@
+/* ------------------------------
+   VARIABLES
+   Design tokens and themed value sets.
+------------------------------- */
+:root {
+    --color-primary: #d9f2fb;
+    --color-accent: #f5a9b8;
+    --color-accent-dark: #e58fa2;
+    --color-text: #1d2d2a;
+    --color-highlight: #ffffff;
+    --color-border: #d7d1c9;
+    --color-background: #fffafb;
+    --color-focus: #bde9f8;
+    --color-error: #9d2f2f;
+    --surface-soft: rgba(255, 255, 255, 0.56);
+    --surface-strong: rgba(255, 255, 255, 0.84);
+    --font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-small: 13px;
+    --font-size-medium: 15px;
+    --font-size-large: 24px;
+    --font-size-hero: 36px;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --border-radius-sm: 12px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 20px;
+    --border-radius-xl: 999px;
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --box-shadow-soft: 0 18px 32px rgba(29, 45, 42, 0.08);
+}
+
+body.dark-mode {
+    --color-primary: #111827;
+    --color-accent: #f5a9b8;
+    --color-accent-dark: #e58fa2;
+    --color-text: #edf3f7;
+    --color-highlight: #ffffff;
+    --color-border: #2a3847;
+    --color-background: #1b2431;
+    --color-focus: #24506a;
+    --color-error: #ffb0b0;
+    --box-shadow-soft: 0 18px 32px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(180deg, #102b3a 0%, #1b2431 52%, #4f2638 100%);
+}
+
+body.colorblind-mode {
+    --color-primary: #e9f2ff;
+    --color-accent: #d7e7ff;
+    --color-accent-dark: #b9d3f5;
+    --color-text: #1a1a1a;
+    --color-highlight: #ffffff;
+    --color-border: #6d6d6d;
+    --color-background: #fbfbfb;
+    --color-focus: #dfe7ff;
+    --color-error: #8b0000;
+}
+
+body.dark-mode.colorblind-mode {
+    --color-primary: #111827;
+    --color-accent: #dfe9f8;
+    --color-accent-dark: #c9d9f7;
+    --color-text: #f2f7ff;
+    --color-highlight: #ffffff;
+    --color-border: #6d6d6d;
+    --color-background: #1b2431;
+    --color-focus: #2e4d73;
+    --color-error: #ffb0b0;
+}
