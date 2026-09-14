@@ -266,7 +266,7 @@ body.dark-mode.colorblind-mode .btn-consultation {
 
 body.dark-mode.colorblind-mode:not(.subpage) .business-name,
 body.dark-mode.colorblind-mode .category-header {
-    color: #1d2d2a;
+    color: #f2f7ff;
 }
 
 /* Operator-granted scope exception: in dark-only mode .btn-back text is
