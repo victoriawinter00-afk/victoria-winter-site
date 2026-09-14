@@ -198,7 +198,7 @@ body.dark-mode .colorblind-toggle,
 body.dark-mode .reset-accessibility {
     background-color: #315d70;
     border-color: #9ed8eb;
-    color: #ffffff;
+    color: #1d2d2a;
 }
 
 body.dark-mode .theme-toggle:hover,
@@ -208,7 +208,7 @@ body.dark-mode .colorblind-toggle:focus-visible,
 body.dark-mode .reset-accessibility:hover,
 body.dark-mode .reset-accessibility:focus-visible {
     background-color: #477d92;
-    color: #1d2d2a;
+    color: #ffffff;
 }
 
 body.dark-mode .highlight-block,
