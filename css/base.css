@@ -208,7 +208,7 @@ body.dark-mode .colorblind-toggle:focus-visible,
 body.dark-mode .reset-accessibility:hover,
 body.dark-mode .reset-accessibility:focus-visible {
     background-color: #477d92;
-    color: #ffffff;
+    color: #1d2d2a;
 }
 
 body.dark-mode .highlight-block,
