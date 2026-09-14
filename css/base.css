@@ -225,10 +225,13 @@ body.dark-mode .site-banner {
 
 body.dark-mode .btn-landing,
 body.dark-mode .btn,
-body.dark-mode .btn-back,
-body.dark-mode .add-remove-btn {
+body.dark-mode .btn-back {
     background-color: var(--color-accent);
     color: var(--color-text);
+}
+
+body.dark-mode .add-remove-btn {
+    color: #111111;
 }
 
 body.dark-mode .btn-landing {

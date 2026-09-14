@@ -325,7 +325,7 @@ body.subpage .btn-landing {
 }
 .add-remove-btn {
     display: inline-block;
-    background-color: var(--color-highlight);
+    background-color: var(--color-accent);
     color: var(--color-text);
     padding: 7px 14px;
     border: none;
@@ -343,7 +343,7 @@ body.subpage .btn-landing {
 }
 
 .add-remove-btn.added {
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-dark);
     color: var(--color-text);
 }
 .category-header {
