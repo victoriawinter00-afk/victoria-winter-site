@@ -325,8 +325,8 @@ body.subpage .btn-landing {
 }
 .add-remove-btn {
     display: inline-block;
-    background-color: var(--color-accent);
-    color: var(--color-text);
+    background-color: var(--btn-service-bg);
+    color: var(--btn-service-text);
     padding: 7px 14px;
     border: none;
     border-radius: var(--border-radius-xl);
@@ -339,12 +339,13 @@ body.subpage .btn-landing {
     transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 .add-remove-btn:hover {
+    background-color: var(--btn-service-bg-hover);
     transform: translateY(-1px);
 }
 
 .add-remove-btn.added {
-    background-color: var(--color-accent-dark);
-    color: var(--color-text);
+    background-color: var(--btn-service-bg-added);
+    color: var(--btn-service-text);
 }
 .category-header {
     margin: var(--spacing-lg) 0 var(--spacing-md) 0;

@@ -230,10 +230,6 @@ body.dark-mode .btn-back {
     color: var(--color-text);
 }
 
-body.dark-mode .add-remove-btn {
-    color: #111111;
-}
-
 body.dark-mode .btn-landing {
     background-color: #f5a9b8;
     color: #111111;

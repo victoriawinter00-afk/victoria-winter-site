@@ -32,6 +32,10 @@
     --transition-fast: 0.2s ease;
     --transition-medium: 0.3s ease;
     --box-shadow-soft: 0 18px 32px rgba(29, 45, 42, 0.08);
+    --btn-service-bg: #f5a9b8;
+    --btn-service-bg-hover: #f8c3cd;
+    --btn-service-bg-added: #e58fa2;
+    --btn-service-text: #111111;
 }
 
 body.dark-mode {
