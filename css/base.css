@@ -250,3 +250,28 @@ body.dark-mode .btn-landing:focus-visible {
         scroll-behavior: auto !important;
     }
 }
+
+/* ------------------------------
+   DARK + COLORBLIND READABILITY (Task 5)
+   In dark+colorblind mode, --color-accent resolves to #dfe9f8 and --color-text
+   to #f2f7ff, producing light text on light-background elements. Literal hex is
+   required here because the variable references resolve to the wrong values in
+   this mode. These are additive overrides; no existing rule is modified.
+------------------------------- */
+body.dark-mode.colorblind-mode .btn-back,
+body.dark-mode.colorblind-mode .btn-consultation {
+    background-color: #f5a9b8;
+    color: #1d2d2a;
+}
+
+body.dark-mode.colorblind-mode:not(.subpage) .business-name,
+body.dark-mode.colorblind-mode .category-header {
+    color: #1d2d2a;
+}
+
+/* Operator-granted scope exception: in dark-only mode .btn-back text is
+   near-white on pink (1.67:1). This rule also matches in dark+colorblind, where
+   it agrees with the combined-mode rule above. */
+body.dark-mode .btn-back {
+    color: #1d2d2a;
+}
