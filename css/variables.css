@@ -42,7 +42,7 @@ body.dark-mode {
     --color-primary: #111827;
     --color-accent: #f5a9b8;
     --color-accent-dark: #e58fa2;
-    --color-text: #1d2d2a;
+    --color-text: #edf3f7;
     --color-highlight: #ffffff;
     --color-border: #2a3847;
     --color-background: #1b2431;
@@ -68,7 +68,7 @@ body.dark-mode.colorblind-mode {
     --color-primary: #111827;
     --color-accent: #dfe9f8;
     --color-accent-dark: #c9d9f7;
-    --color-text: #1d2d2a;
+    --color-text: #f2f7ff;
     --color-highlight: #ffffff;
     --color-border: #6d6d6d;
     --color-background: #1b2431;
