@@ -113,8 +113,12 @@ export function initConsultationForm() {
         let servicesText = '';
         let total = 0;
         selectedServices.forEach(function(s) {
-            servicesText += '- ' + s.name + ': $' + s.price + '\n';
-            total += s.price;
+            if (s.price === null) {
+                servicesText += '- ' + s.name + ': Quoted\n';
+            } else {
+                servicesText += '- ' + s.name + ': $' + s.price + '\n';
+                total += s.price;
+            }
         });
 
         // --- STEP 5: Build payload with client info ---

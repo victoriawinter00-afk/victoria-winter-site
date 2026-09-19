@@ -3,6 +3,8 @@ import { qs, qsa } from './dom.js';
 // Store selected services
 const selectedServices = [];
 
+const STORAGE_KEY = 'selected-services';
+
 let selectedList = null;
 let totalEstimate = null;
 let descriptionMessage = null;
@@ -12,8 +14,40 @@ export function getSelectedServices() {
     return selectedServices;
 }
 
+// ---------- PERSISTENCE ----------
+function persistSelectedServices() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(selectedServices));
+    } catch (error) {
+        // Storage unavailable; keep selections in memory for this page.
+    }
+}
+
+function loadSelectedServices() {
+    let stored = [];
+    try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed)) {
+                stored = parsed.filter(function(item) {
+                    return item && typeof item.name === 'string' && (item.price === null || typeof item.price === 'number');
+                });
+            }
+        }
+    } catch (error) {
+        stored = [];
+    }
+
+    selectedServices.length = 0;
+    stored.forEach(function(item) {
+        selectedServices.push({ name: item.name, price: item.price === null ? null : item.price });
+    });
+}
+
 export function clearSelectedServices() {
     selectedServices.length = 0;
+    persistSelectedServices();
 }
 
 // ---------- UPDATE CONSULTATION BOX ----------
@@ -37,18 +71,59 @@ export function updateConsultationBox() {
     }
 
     let total = 0;
+    let hasQuoted = false;
     selectedServices.forEach(function(service) {
         const li = document.createElement('li');
-        li.textContent = service.name + ' — $' + service.price;
+        if (service.price === null) {
+            li.textContent = service.name + ' — Quoted';
+            hasQuoted = true;
+        } else {
+            li.textContent = service.name + ' — $' + service.price;
+            total += service.price;
+        }
+
         if (selectedList) {
+            const removeBtn = document.createElement('button');
+            removeBtn.setAttribute('type', 'button');
+            removeBtn.className = 'remove-service-btn';
+            removeBtn.textContent = 'Remove';
+            removeBtn.setAttribute('aria-label', 'Remove ' + service.name);
+            removeBtn.addEventListener('click', function() {
+                removeServiceByName(service.name);
+            });
+            li.appendChild(document.createTextNode(' '));
+            li.appendChild(removeBtn);
             selectedList.appendChild(li);
         }
-        total += service.price;
     });
 
     if (totalEstimate) {
-        totalEstimate.innerHTML = '<strong>Estimated Total: $' + total + '</strong>';
+        let html = '<strong>Estimated Total: $' + total + '</strong>';
+        if (hasQuoted) {
+            html += '<br>Quoted — estimate in agreement';
+        }
+        totalEstimate.innerHTML = html;
     }
+}
+
+function removeServiceByName(name) {
+    const index = selectedServices.findIndex(function(service) {
+        return service.name === name;
+    });
+    if (index === -1) {
+        return;
+    }
+
+    selectedServices.splice(index, 1);
+    persistSelectedServices();
+    updateConsultationBox();
+
+    qsa('.add-remove-btn').forEach(function(btn) {
+        if (btn.getAttribute('data-service') === name) {
+            btn.classList.remove('added');
+            btn.textContent = 'Add / Remove';
+        }
+    });
 }
 
 export function resetServiceButtons() {
@@ -95,12 +170,30 @@ export function initServiceBuilder() {
     descriptionMessage = document.getElementById('description-message');
     requestBtn = document.getElementById('request-consultation');
 
+    loadSelectedServices();
+
+    addRemoveBtns.forEach(function(btn) {
+        const serviceName = btn.getAttribute('data-service');
+        const isStored = selectedServices.some(function(service) {
+            return service.name === serviceName;
+        });
+        if (isStored) {
+            btn.classList.add('added');
+            btn.textContent = 'Added ✓';
+        }
+    });
+
     addRemoveBtns.forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
 
             const serviceName = this.getAttribute('data-service');
-            const servicePrice = parseInt(this.getAttribute('data-price'));
+            const priceMode = this.getAttribute('data-price-mode') || 'fixed';
+            let servicePrice = null;
+            if (priceMode !== 'quoted') {
+                const parsedPrice = parseInt(this.getAttribute('data-price'), 10);
+                servicePrice = isNaN(parsedPrice) ? null : parsedPrice;
+            }
 
             const existingIndex = selectedServices.findIndex(function(s) {
                 return s.name === serviceName;
@@ -111,11 +204,30 @@ export function initServiceBuilder() {
                 this.classList.remove('added');
                 this.textContent = 'Add / Remove';
             } else {
+                const group = this.getAttribute('data-group');
+                if (group) {
+                    qsa('.add-remove-btn[data-group="' + group + '"]').forEach(function(other) {
+                        if (other === this || !other.classList.contains('added')) {
+                            return;
+                        }
+                        const otherName = other.getAttribute('data-service');
+                        const otherIndex = selectedServices.findIndex(function(s) {
+                            return s.name === otherName;
+                        });
+                        if (otherIndex !== -1) {
+                            selectedServices.splice(otherIndex, 1);
+                        }
+                        other.classList.remove('added');
+                        other.textContent = 'Add / Remove';
+                    }, this);
+                }
+
                 selectedServices.push({ name: serviceName, price: servicePrice });
                 this.classList.add('added');
                 this.textContent = 'Added ✓';
             }
 
+            persistSelectedServices();
             updateConsultationBox();
 
             if (selectedServices.length > 0) {
@@ -128,6 +240,8 @@ export function initServiceBuilder() {
             }
         });
     });
+
+    updateConsultationBox();
 
     // ---------- INITIAL STATE ----------
     if (selectedServices.length === 0 && descriptionMessage) {

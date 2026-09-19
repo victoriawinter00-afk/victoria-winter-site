@@ -78,9 +78,54 @@
                 </div>
                 <a href="https://www.victoriawinter00.com/new-business" class="btn btn-landing">Start a new business</a>
                 <a href="https://www.victoriawinter00.com/existing-business" class="btn btn-landing">Support an existing business</a>
+                <a href="https://www.victoriawinter00.com/web-software" class="btn btn-landing">Web and Software Services</a>
                 <p class="site-note">This site intentionally avoids cookies, tracking scripts, and personalized advertising. It is designed to be clear, low-distraction, and respectful of your attention.</p>
             </div>
         </header>
+
+        <section class="services-list">
+            <div class="container">
+                <div class="consultation-builder">
+                    <h3>Your Consultation Request</h3>
+                    <div id="consultation-description" class="consultation-box">
+                        <p id="description-message">Please select a service or use the message box to request consultation.</p>
+                        <ul id="selected-services-list"></ul>
+                        <p id="total-estimate"><strong>Estimated Total: $0</strong></p>
+                    </div>
+                    <p class="policy-note">By submitting this request, you agree that Victoria Winter may use the information you provide to respond to your request, discuss services, and prepare or administer a service agreement. See the <a href="https://www.victoriawinter00.com/privacy-policy">Privacy Policy</a> and <a href="https://www.victoriawinter00.com/terms-of-service">Terms of Service</a>. Please do not submit sensitive documents or payment information through this form.</p>
+                    <textarea id="personal-message" placeholder="Add a personal message (optional, up to 1000 characters)..." maxlength="1000"></textarea>
+                    <p id="char-counter">0 / 1000</p>
+
+                    <!-- Client Contact Information -->
+                    <div class="contact-fields">
+                        <h3>Your Contact Information</h3>
+                        <div class="form-group">
+                            <label for="client-name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="client-name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="client-email">Email Address</label>
+                            <input type="email" id="client-email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="client-phone">Phone Number</label>
+                            <input type="tel" id="client-phone" placeholder="(303) 555-1234">
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Contact Method</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" class="contact-pref" id="pref-email" value="Email"> Email</label>
+                                <label><input type="checkbox" class="contact-pref" id="pref-call" value="Call"> Call</label>
+                                <label><input type="checkbox" class="contact-pref" id="pref-text" value="Text"> Text</label>
+                            </div>
+                            <small>Check all that apply (optional)</small>
+                        </div>
+                    </div>
+                    <button id="request-consultation" class="btn btn-consultation">Request Consultation</button>
+                    <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="disclaimer-footer">
