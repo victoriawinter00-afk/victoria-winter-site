@@ -463,6 +463,10 @@ body.subpage .btn-landing {
     margin: 0.75rem 0 1rem 1.25rem;
 }
 
+.legal-page ol {
+    list-style: decimal;
+}
+
 .legal-page .small-note {
     font-size: 0.9rem;
     opacity: 0.85;
