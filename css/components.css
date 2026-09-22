@@ -504,3 +504,27 @@ body.subpage .btn-landing {
     color: var(--color-text);
     margin: var(--spacing-sm) 0 0;
 }
+
+/* ------------------------------
+   CONSULTATION BOX REMOVE BUTTON
+------------------------------- */
+.remove-service-btn {
+    margin-left: var(--spacing-sm);
+    padding: 6px 14px;
+    background-color: var(--color-accent-dark);
+    color: var(--color-text);
+    border: 1px solid var(--color-focus);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-family);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+.remove-service-btn:hover {
+    background-color: var(--color-accent);
+}
+
+body.dark-mode .remove-service-btn {
+    color: #1d2d2a;
+}

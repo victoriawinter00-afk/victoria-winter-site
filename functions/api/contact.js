@@ -51,7 +51,7 @@ export async function onRequestPost({ request, env }) {
       }],
       from: {
         email: 'noreply@victoriawinter00.com',
-        name: 'Victoria Winter Consulting'
+        name: 'Victoria Luna Consulting LLC'
       },
       subject: 'New Consultation Request',
       content: [{

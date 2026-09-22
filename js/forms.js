@@ -10,6 +10,24 @@ let personalMessage = null;
 let charCounter = null;
 let formStatus = null;
 
+const MESSAGE_STORAGE_KEY = 'consultation-message';
+
+function persistMessage(value) {
+    try {
+        localStorage.setItem(MESSAGE_STORAGE_KEY, value);
+    } catch (error) {
+        // Storage unavailable; keep the message in memory for this page.
+    }
+}
+
+function clearStoredMessage() {
+    try {
+        localStorage.removeItem(MESSAGE_STORAGE_KEY);
+    } catch (error) {
+        // Storage unavailable; nothing to clear.
+    }
+}
+
 function setFormStatus(message, type) {
     if (!formStatus) return;
     formStatus.textContent = message;
@@ -22,11 +40,25 @@ export function initMessageCounter() {
     charCounter = document.getElementById('char-counter');
 
     if (personalMessage) {
+        try {
+            const storedMessage = localStorage.getItem(MESSAGE_STORAGE_KEY);
+            if (storedMessage) {
+                personalMessage.value = storedMessage;
+            }
+        } catch (error) {
+            // Storage unavailable; start with an empty message.
+        }
+
+        if (charCounter) {
+            charCounter.textContent = personalMessage.value.length + ' / 1000';
+        }
+
         personalMessage.addEventListener('input', function() {
             const count = this.value.length;
             if (charCounter) {
                 charCounter.textContent = count + ' / 1000';
             }
+            persistMessage(this.value);
         });
     }
 }
@@ -150,6 +182,7 @@ export function initConsultationForm() {
 
                 // Clear form
                 clearSelectedServices();
+                clearStoredMessage();
                 updateConsultationBox();
                 if (personalMessage) personalMessage.value = '';
                 if (charCounter) charCounter.textContent = '0 / 1000';

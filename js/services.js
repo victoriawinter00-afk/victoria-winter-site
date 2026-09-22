@@ -86,12 +86,11 @@ export function updateConsultationBox() {
             const removeBtn = document.createElement('button');
             removeBtn.setAttribute('type', 'button');
             removeBtn.className = 'remove-service-btn';
-            removeBtn.textContent = 'Remove';
-            removeBtn.setAttribute('aria-label', 'Remove ' + service.name);
+            removeBtn.setAttribute('aria-label', 'Remove ' + service.name + ' from your estimate');
+            removeBtn.textContent = 'Click to remove ' + service.name + ' from your estimate';
             removeBtn.addEventListener('click', function() {
                 removeServiceByName(service.name);
             });
-            li.appendChild(document.createTextNode(' '));
             li.appendChild(removeBtn);
             selectedList.appendChild(li);
         }
