@@ -7,3 +7,5 @@ node_modules/
 
 # Local-only agent configuration — kept off the public repo
 .kilo/agents/manager.md
+.kilo/agents/manager-resume.md
+.kilo/worktrees/
