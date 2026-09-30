@@ -10,3 +10,4 @@ node_modules/
 .kilo/agents/manager-resume.md
 .kilo/agents/coder.md
 .kilo/worktrees/
+.kilo/archive/
