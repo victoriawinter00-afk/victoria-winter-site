@@ -264,9 +264,15 @@ body.dark-mode.colorblind-mode .btn-consultation {
     color: #1d2d2a;
 }
 
-body.dark-mode.colorblind-mode:not(.subpage) .business-name,
-body.dark-mode.colorblind-mode .category-header {
+body.dark-mode.colorblind-mode:not(.subpage) .business-name {
     color: #f2f7ff;
+}
+
+/* .category-header keeps a LIGHT fixed gradient in every theme, so its ink is
+   always the fixed dark literal (see components.css); this override just makes
+   that explicit against the combined-mode rule above. */
+body.dark-mode.colorblind-mode .category-header {
+    color: #1d2d2a;
 }
 
 /* Operator-granted scope exception: in dark-only mode .btn-back text is

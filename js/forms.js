@@ -144,9 +144,13 @@ export function initConsultationForm() {
         // --- STEP 4: Build services text ---
         let servicesText = '';
         let total = 0;
+        let maintenanceTotal = 0;
         selectedServices.forEach(function(s) {
             if (s.price === null) {
                 servicesText += '- ' + s.name + ': Quoted\n';
+            } else if (s.recurring) {
+                servicesText += '- ' + s.name + ': $' + s.price + '/mo\n';
+                maintenanceTotal += s.price;
             } else {
                 servicesText += '- ' + s.name + ': $' + s.price + '\n';
                 total += s.price;
@@ -157,6 +161,7 @@ export function initConsultationForm() {
         const payload = {
             services: servicesText || null,
             total: total > 0 ? '$' + total : null,
+            maintenance: maintenanceTotal > 0 ? '$' + maintenanceTotal + '/mo' : null,
             message: personalMessage ? personalMessage.value.trim() : null,
             clientName: clientName.value.trim(),
             clientEmail: clientEmail.value.trim(),

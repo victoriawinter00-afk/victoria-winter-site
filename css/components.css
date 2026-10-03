@@ -187,6 +187,14 @@ body.subpage .btn-landing {
     color: var(--color-text);
     margin-bottom: var(--spacing-md);
 }
+
+/* A service category heading can sit inside a .contact-fields panel (the
+   Website Maintenance block). Without this the panel's `h3` colour rule
+   outranks .category-header and turns the heading near-white in dark mode.
+   The heading's own background is a fixed light gradient, so it stays dark. */
+.contact-fields h3.category-header {
+    color: #1d2d2a;
+}
 .form-group {
     margin-bottom: var(--spacing-md);
 }
@@ -350,8 +358,11 @@ body.subpage .btn-landing {
 .category-header {
     margin: var(--spacing-lg) 0 var(--spacing-md) 0;
     padding: 0.75rem 1rem;
+    /* The background below is a fixed LIGHT gradient in every theme, so the ink
+       must be a fixed dark literal too. Using var(--color-text) turned these
+       headings near-white in dark mode (light text on a light panel). */
     background: linear-gradient(135deg, rgba(243, 223, 233, 0.85), rgba(223, 239, 243, 0.85));
-    color: var(--color-text);
+    color: #1d2d2a;
     border-radius: var(--border-radius-md);
     font-size: 16px;
     font-weight: 700;
@@ -370,6 +381,34 @@ body.subpage .btn-landing {
     font-size: var(--font-size-medium);
     font-weight: 600;
     letter-spacing: 0.3px;
+}
+
+/* Maintenance plan table. Fixed layout plus wrapping keeps the four-column
+   table inside the viewport at 320px, and every cell is centred so the
+   plan/price rows read as one aligned block rather than a ragged mix of
+   browser-default th (centred) and td (left) alignment. */
+.maintenance-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: var(--spacing-md) 0;
+    font-size: var(--font-size-medium);
+}
+
+.maintenance-table th,
+.maintenance-table td {
+    text-align: center;
+    padding: 0.45rem 0.4rem;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.maintenance-table thead th {
+    background: var(--surface-strong);
+}
+
+.maintenance-table tbody th {
+    font-weight: 700;
 }
 .quote-box {
     margin: var(--spacing-lg) 0;

@@ -41,7 +41,11 @@ function loadSelectedServices() {
 
     selectedServices.length = 0;
     stored.forEach(function(item) {
-        selectedServices.push({ name: item.name, price: item.price === null ? null : item.price });
+        selectedServices.push({
+            name: item.name,
+            price: item.price === null ? null : item.price,
+            recurring: Boolean(item.recurring)
+        });
     });
 }
 
@@ -61,7 +65,7 @@ export function updateConsultationBox() {
             descriptionMessage.textContent = 'Please select a service or use the message box, and provide a contact method with your name to request a free consultation.';
         }
         if (totalEstimate) {
-            totalEstimate.innerHTML = '<strong>Estimated Total: $0</strong>';
+            totalEstimate.innerHTML = '<strong>Project total: $0</strong>';
         }
         return;
     }
@@ -71,12 +75,16 @@ export function updateConsultationBox() {
     }
 
     let total = 0;
+    let recurringTotal = 0;
     let hasQuoted = false;
     selectedServices.forEach(function(service) {
         const li = document.createElement('li');
         if (service.price === null) {
             li.textContent = service.name + ' — Quoted';
             hasQuoted = true;
+        } else if (service.recurring) {
+            li.textContent = service.name + ' — $' + service.price + '/mo';
+            recurringTotal += service.price;
         } else {
             li.textContent = service.name + ' — $' + service.price;
             total += service.price;
@@ -97,7 +105,10 @@ export function updateConsultationBox() {
     });
 
     if (totalEstimate) {
-        let html = '<strong>Estimated Total: $' + total + '</strong>';
+        let html = '<strong>Project total: $' + total + '</strong>';
+        if (recurringTotal > 0) {
+            html += ' · Maintenance: $' + recurringTotal + '/mo';
+        }
         if (hasQuoted) {
             html += '<br>Quoted — estimate in agreement';
         }
@@ -189,7 +200,12 @@ export function initServiceBuilder() {
             const serviceName = this.getAttribute('data-service');
             const priceMode = this.getAttribute('data-price-mode') || 'fixed';
             let servicePrice = null;
-            if (priceMode !== 'quoted') {
+            let recurring = false;
+            if (priceMode === 'recurring') {
+                const parsedRecurring = parseInt(this.getAttribute('data-price'), 10);
+                servicePrice = isNaN(parsedRecurring) ? null : parsedRecurring;
+                recurring = true;
+            } else if (priceMode !== 'quoted') {
                 const parsedPrice = parseInt(this.getAttribute('data-price'), 10);
                 servicePrice = isNaN(parsedPrice) ? null : parsedPrice;
             }
@@ -221,7 +237,7 @@ export function initServiceBuilder() {
                     }, this);
                 }
 
-                selectedServices.push({ name: serviceName, price: servicePrice });
+                selectedServices.push({ name: serviceName, price: servicePrice, recurring: recurring });
                 this.classList.add('added');
                 this.textContent = 'Added ✓';
             }
