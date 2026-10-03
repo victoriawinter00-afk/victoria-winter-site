@@ -80,13 +80,13 @@ export function updateConsultationBox() {
     selectedServices.forEach(function(service) {
         const li = document.createElement('li');
         if (service.price === null) {
-            li.textContent = service.name + ' — Quoted';
+            li.textContent = service.name + ' - Quoted';
             hasQuoted = true;
         } else if (service.recurring) {
-            li.textContent = service.name + ' — $' + service.price + '/mo';
+            li.textContent = service.name + ' - $' + service.price + '/mo';
             recurringTotal += service.price;
         } else {
-            li.textContent = service.name + ' — $' + service.price;
+            li.textContent = service.name + ' - $' + service.price;
             total += service.price;
         }
 
@@ -110,7 +110,7 @@ export function updateConsultationBox() {
             html += ' · Maintenance: $' + recurringTotal + '/mo';
         }
         if (hasQuoted) {
-            html += '<br>Quoted — estimate in agreement';
+            html += '<br>Quoted - estimate in agreement';
         }
         totalEstimate.innerHTML = html;
     }
